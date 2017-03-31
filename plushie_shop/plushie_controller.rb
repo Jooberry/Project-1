@@ -31,3 +31,6 @@ post '/plushies/:id/delete' do
   @plushie.delete()
   redirect to '/plushies'
 end
+
+binding.pry
+nil
