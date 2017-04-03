@@ -12,7 +12,7 @@ class Plushie
   end
 
   def save()
-    sql = "INSERT INTO plushies (name, brand_id) VALUES ('#{@name}', #{@brand_id}) RETURNING *"
+    sql = "INSERT INTO plushies (name, brand_id, quantity) VALUES ('#{@name}', #{@brand_id}, #{@quantity}) RETURNING *"
     plushie_data = SqlRunner.run(sql)
     @id = plushie_data.first()['id'].to_i
   end
@@ -26,9 +26,11 @@ class Plushie
   def update()
     sql = "UPDATE plushies SET (
         name,
-        brand_id) = ( 
+        brand_id,
+        quantity) = ( 
         '#{@name}',
-        #{@brand_id})
+        #{@brand_id}),
+        #{@quantity}
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end

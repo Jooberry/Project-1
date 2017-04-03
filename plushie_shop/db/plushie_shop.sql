@@ -9,5 +9,6 @@ CREATE TABLE brands (
 CREATE TABLE plushies (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  brand_id INT4 REFERENCES brands(id) ON DELETE CASCADE
+  brand_id INT4 REFERENCES brands(id) ON DELETE CASCADE,
+  quantity INT4
 );
