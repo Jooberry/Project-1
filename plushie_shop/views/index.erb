@@ -1,1 +1,7 @@
-<p>IT'S SO FLUFFY I COULD DIE!!!</p>
+<% @plushies.each do |plushie| %>
+  <p>Name: <%= plushie.name %></p>
+  <p>Brand: <%= plushie.brand.brand_name %></p>
+  <p>Quantity: <%= plushie.quantity %></p>
+  <p><a href="/plushies/<%= plushie.id %>">Show Plushie</a></p>
+  <hr/>
+<% end %>
