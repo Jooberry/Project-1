@@ -2,12 +2,13 @@ require_relative('../db/sql_runner')
 
 class Plushie
 
-  attr_reader :id, :name, :brand_id
+  attr_reader :id, :name, :brand_id, :quantity
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @brand_id = options['brand_id']
+    @quantity = options['quantity'].to_i
   end
 
   def save()
