@@ -31,5 +31,16 @@ post '/plushies/:id/delete' do
   redirect to '/plushies'
 end
 
+get '/plushies/:id/edit' do
+  @plushie = Plushie.find(params[:id])
+  erb(:"plushies/edit")
+end
+
+post '/plushies/:id' do 
+  @plushie = Plushie.new(params)
+  @plushie.update
+  erb(:"plushies/show")
+end
+
 binding.pry
 nil

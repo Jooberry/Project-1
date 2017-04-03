@@ -1,0 +1,19 @@
+<form method="post" action="/plushies/<%=@plushie.id%>">
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name"/>
+  <br/>
+  <br/>
+  <label for="brand-select">Brand:</label>
+  <select id="brand-select" name="brand">
+    <option value="San-x" <%="selected" if @plushie.brand_name == "San-x" %>>San-x</option>
+    <option value="Sanrio"<%="selected" if @plushie.brand_name == "Sanrio" %>>Sanrio</option>
+  </select>
+  </select>
+  <br/>
+  <br/>
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity"/>
+  <br/>
+  <br/>
+  <input type="submit" value="Update Order"/>
+</form>

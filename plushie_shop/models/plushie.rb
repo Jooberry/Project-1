@@ -20,7 +20,7 @@ class Plushie
   def brand()
     sql = "SELECT * FROM brands WHERE brands.id = #{@brand_id}"
     brand = SqlRunner.run(sql).first
-    return Brand.new(brand)
+    return Brand.new(brand).brand_name
   end
 
   def update()
