@@ -1,0 +1,6 @@
+<% @brands.each do |brand| %>
+  <p>Name: <%= brand.brand_name %></p>
+  <form method="post" action="/brands/<%= brand.id %>/delete">
+    <input type="submit" value="Delete Brand">
+  </form>
+<% end %>
