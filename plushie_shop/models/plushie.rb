@@ -29,14 +29,14 @@ class Plushie
         brand_id,
         quantity) = ( 
         '#{@name}',
-        #{@brand_id}),
-        #{@quantity}
+        #{@brand_id},
+        #{@quantity})
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end
 
   def delete()
-    sql = "DELETE FROM plushies WHERE id=#{ @id };"
+    sql = "DELETE FROM plushies WHERE id=#{@id};"
     SqlRunner.run(sql)
   end
 

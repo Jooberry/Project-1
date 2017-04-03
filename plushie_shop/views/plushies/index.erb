@@ -10,7 +10,7 @@
     <% @plushies.each do |plushie| %>
     <tr>
       <td><%= plushie.name %></td>
-      <td><%= plushie.brand.brand_name %></td>
+      <td><%= plushie.brand %></td>
       <td><%= plushie.quantity %></td>
       <td><%= plushie.show_stock_level %></td>
       <td><a href="/plushies/<%= plushie.id %>">Show Plushie</a></td>

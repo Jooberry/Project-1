@@ -33,6 +33,7 @@ end
 
 get '/plushies/:id/edit' do
   @plushie = Plushie.find(params[:id])
+  @brands = Brand.all()
   erb(:"plushies/edit")
 end
 

@@ -1,18 +1,18 @@
 <form method="post" action="/plushies/<%=@plushie.id%>">
   <label for="name">Name:</label>
-  <input id="name" type="text" name="name"/>
+  <input id="name" type="text" name="name" value="<%= @plushie.name %>"/>
   <br/>
   <br/>
   <label for="brand-select">Brand:</label>
-  <select id="brand-select" name="brand">
-    <option value="San-x" <%="selected" if @plushie.brand_name == "San-x" %>>San-x</option>
-    <option value="Sanrio"<%="selected" if @plushie.brand_name == "Sanrio" %>>Sanrio</option>
-  </select>
+  <select id="brand-select" name="brand_id">
+  <% @brands.each do |brand| %>
+  <option value=<%= brand.id %>><%= brand.brand_name %></option>
+  <% end %>
   </select>
   <br/>
   <br/>
   <label for="quantity">Quantity:</label>
-  <input id="quantity" type="number" name="quantity"/>
+  <input id="quantity" type="number" name="quantity" value="<%= @plushie.quantity %>"/>
   <br/>
   <br/>
   <input type="submit" value="Update Order"/>
