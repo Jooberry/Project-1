@@ -2,17 +2,18 @@ require_relative('../db/sql_runner')
 
 class Plushie
 
-  attr_reader :id, :name, :brand_id, :quantity
+  attr_reader :id, :name, :brand_id, :quantity, :buy_price
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @brand_id = options['brand_id']
     @quantity = options['quantity'].to_i
+    @buy_price = options['buy_price'].to_f
   end
 
   def save()
-    sql = "INSERT INTO plushies (name, brand_id, quantity) VALUES ('#{@name}', #{@brand_id}, #{@quantity}) RETURNING *"
+    sql = "INSERT INTO plushies (name, brand_id, quantity, buy_price) VALUES ('#{@name}', #{@brand_id}, #{@quantity}, #{@buy_price}) RETURNING *"
     plushie_data = SqlRunner.run(sql)
     @id = plushie_data.first()['id'].to_i
   end
@@ -27,10 +28,12 @@ class Plushie
     sql = "UPDATE plushies SET (
         name,
         brand_id,
-        quantity) = ( 
+        quantity,
+        buy_price) = ( 
         '#{@name}',
         #{@brand_id},
-        #{@quantity})
+        #{@quantity},
+        #{@buy_price})
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end
@@ -40,7 +43,7 @@ class Plushie
     SqlRunner.run(sql)
   end
 
-  def show_stock_level
+  def show_stock_level()
     if @quantity <=3
       return "LOW"
     elsif @quantity >= 4 && @quantity <= 7
@@ -48,6 +51,10 @@ class Plushie
     elsif @quantity >= 8
       return "HIGH"
     end
+  end
+
+  def sell_price()
+    return @buy_price * 2.7
   end
 
   def self.all()
