@@ -40,6 +40,16 @@ class Plushie
     SqlRunner.run(sql)
   end
 
+  def show_stock_level
+    if @quantity <=3
+      return "Low stock levels. Reorder pronto!"
+    elsif @quantity >= 4 && @quantity <= 7
+      return "Medium stock levels"
+    elsif @quantity >= 8
+      return "High stock levels"
+    end
+  end
+
   def self.all()
     sql = "SELECT * FROM plushies;"
     plushies = SqlRunner.run(sql)
