@@ -4,6 +4,7 @@
     <th>Brand</th>
     <th>Quantity</th>
     <th>Stock Level</th>
+    <th></th>
   </thead>
   <tbody>
     <% @plushies.each do |plushie| %>
@@ -11,9 +12,9 @@
       <td><%= plushie.name %></td>
       <td><%= plushie.brand.brand_name %></td>
       <td><%= plushie.quantity %></td>
+      <td><%= plushie.show_stock_level %></td>
+      <td><a href="/plushies/<%= plushie.id %>">Show Plushie</a></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
-  <p><a href="/plushies/<%= plushie.id %>">Show Plushie</a></p>
-  <hr/>
-<% end %>
