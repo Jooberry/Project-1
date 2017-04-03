@@ -21,6 +21,19 @@ class Brand
     return Plushie.new(result.first)
   end
 
+  def update()
+    sql = "UPDATE plushies SET (
+        brand_name) = ( 
+        '#{@brand_name}')
+        WHERE id = #{@id}"
+      SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM brands WHERE id=#{ @id };"
+    SqlRunner.run(sql)
+  end
+
   def self.all()
     sql = "SELECT * FROM brands;"
     brands = SqlRunner.run(sql)
