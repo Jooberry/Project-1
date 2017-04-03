@@ -1,7 +1,19 @@
-<% @plushies.each do |plushie| %>
-  <p>Name: <%= plushie.name %></p>
-  <p>Brand: <%= plushie.brand.brand_name %></p>
-  <p>Quantity: <%= plushie.quantity %></p>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Brand</th>
+    <th>Quantity</th>
+    <th>Stock Level</th>
+  </thead>
+  <tbody>
+    <% @plushies.each do |plushie| %>
+    <tr>
+      <td><%= plushie.name %></td>
+      <td><%= plushie.brand.brand_name %></td>
+      <td><%= plushie.quantity %></td>
+    </tr>
+  </tbody>
+</table>
   <p><a href="/plushies/<%= plushie.id %>">Show Plushie</a></p>
   <hr/>
 <% end %>
