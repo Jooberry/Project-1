@@ -42,11 +42,11 @@ class Plushie
 
   def show_stock_level
     if @quantity <=3
-      return "Low stock levels. Reorder pronto!"
+      return "LOW"
     elsif @quantity >= 4 && @quantity <= 7
-      return "Medium stock levels"
+      return "MEDIUM"
     elsif @quantity >= 8
-      return "High stock levels"
+      return "HIGH"
     end
   end
 
