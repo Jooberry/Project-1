@@ -25,3 +25,15 @@ post '/brands/:id/delete' do
   @brand.delete()
   redirect to '/brands'
 end
+
+get '/brands/:id/edit' do
+  @brand = Brand.find(params[:id])
+  @plushies = Plushie.all()
+  erb(:"brands/edit")
+end
+
+post '/brands/:id' do 
+  @brand = Brand.new(params)
+  @brand.update
+  redirect to '/brands'
+end
