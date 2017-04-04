@@ -84,6 +84,23 @@ class Plushie
     return total
   end
 
+  def profit()
+    sell_price - @buy_price
+  end
+
+  def profit_all()
+    @quantity * profit
+  end
+
+  def profit_total()
+    result = Plushie.all()
+    total = 0
+    result.each do |plushie|
+      total += plushie.profit_all
+    end
+    return total
+  end
+
   def self.quantity_sum()
     # result = Plushie.all()
     # total = 0
