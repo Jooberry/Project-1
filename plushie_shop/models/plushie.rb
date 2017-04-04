@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Plushie
 
-  attr_reader :id, :name, :brand_id, :quantity, :buy_price
+  attr_reader :id, :name, :brand_id, :quantity, :buy_price, :picture
 
   def initialize(options)
     @id = options['id'].to_i
@@ -10,10 +10,11 @@ class Plushie
     @brand_id = options['brand_id']
     @quantity = options['quantity'].to_i
     @buy_price = options['buy_price'].to_f.round(2)
+    @picture = options['picture']
   end
 
   def save()
-    sql = "INSERT INTO plushies (name, brand_id, quantity, buy_price) VALUES ('#{@name}', #{@brand_id}, #{@quantity}, #{@buy_price}) RETURNING *"
+    sql = "INSERT INTO plushies (name, brand_id, quantity, buy_price, picture) VALUES ('#{@name}', #{@brand_id}, #{@quantity}, #{@buy_price}, '#{@picture}') RETURNING *"
     plushie_data = SqlRunner.run(sql)
     @id = plushie_data.first()['id'].to_i
   end
@@ -29,11 +30,13 @@ class Plushie
         name,
         brand_id,
         quantity,
-        buy_price) = ( 
+        buy_price,
+        picture) = ( 
         '#{@name}',
         #{@brand_id},
         #{@quantity},
-        #{@buy_price})
+        #{@buy_price},
+        '#{@picture}')
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end

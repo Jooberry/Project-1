@@ -14,6 +14,25 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: salmon;
 }
 
+.HIGH {
+  background-color: green;
+  color: white;
+}
+
+.MEDIUM {
+  background-color: orange;
+  color: white;
+}
+
+.LOW {
+  background-color: red;
+  color: white;
+}
+
+.plushie-image {
+  max-width: 110px;
+  max-height: 110px;
+}
