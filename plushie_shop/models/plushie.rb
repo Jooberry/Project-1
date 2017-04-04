@@ -9,7 +9,7 @@ class Plushie
     @name = options['name']
     @brand_id = options['brand_id']
     @quantity = options['quantity'].to_i
-    @buy_price = options['buy_price'].to_f
+    @buy_price = options['buy_price'].to_f.round(2)
   end
 
   def save()
@@ -54,11 +54,33 @@ class Plushie
   end
 
   def sell_price()
-    return @buy_price * 2.7
+    sell_price = @buy_price * 2.7
+    return sell_price.round(0) + 0.99
+  end
+
+  def buy_price_all()
+    @buy_price * @quantity
+  end
+
+  def sell_price_all()
+    @quantity * sell_price
+  end
+
+  def self.quantity_sum()
+    # result = Plushie.all()
+    # total = 0
+    # result.each do |plushie|
+    #   total += plushie.quantity
+    # end
+    # return total
+
+    sql = "SELECT SUM(quantity) as total FROM plushies"
+    result = SqlRunner.run(sql)
+    return result.first["total"].to_i
   end
 
   def self.all()
-    sql = "SELECT * FROM plushies;"
+    sql = "SELECT * FROM plushies"
     plushies = SqlRunner.run(sql)
     result = plushies.map { |plushie| Plushie.new(plushie)}
     return result
