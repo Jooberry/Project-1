@@ -8,7 +8,7 @@ class Brand
     @id = options['id'].to_i
     @brand_name = options['brand_name']
     @picture = options['picture']
-    @description = options['description']
+    @description = options['description'].gsub("'", "''")
   end
 
   def save()
@@ -24,7 +24,7 @@ class Brand
   end
 
   def update()
-    sql = "UPDATE plushies SET (
+    sql = "UPDATE brands SET (
         brand_name, picture, description) = ( 
         '#{@brand_name}', '#{@picture}', '#{@description}')
         WHERE id = #{@id}"
