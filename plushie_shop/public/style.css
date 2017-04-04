@@ -58,3 +58,7 @@ td.LOW {
 .brand_table tr:nth-child(even) {
   background-color: wheat;
 }
+
+textarea {
+  vertical-align: top; 
+}​

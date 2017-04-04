@@ -1,0 +1,12 @@
+<form method="post" action="/brands/<%=@brand.id%>">
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%= @brand.brand_name %>"/>
+  <br/>
+  <label for="picture">Picture:</label>
+  <input id="picture" type="text" name="picture" value="<%= @brand.picture %>"/>
+  <br/>
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" rows="10" cols="30"> <%= @brand.description %></textarea>
+  <br/>
+  <input type="submit" value="Update Brand"/>
+</form>
