@@ -1,6 +1,24 @@
-<% @brands.each do |brand| %>
-  <p>Name: <%= brand.brand_name %></p>
-  <form method="post" action="/brands/<%= brand.id %>/delete">
-    <input type="submit" value="Delete Brand">
-  </form>
-<% end %>
+<table class="brand_table">
+  <thead>
+    <th>Name</th>
+    <th>Logo</th>
+    <th>Description</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @brands.each do |brand| %>
+    <tr>
+    <td><%= brand.brand_name %></td>
+    <td> <img class="brand-image" src=<%= brand.picture %>></td>
+    <td><%= brand.description %></td>
+    <td>
+      <form method="get" action="/brands/<%= brand.id %>/edit">
+      <input type="submit" value="Edit Brand">
+      <br/>
+      <form method="post" action="/brands/<%= brand.id %>/delete">
+      <input type="submit" value="Delete Brand">
+    </td>
+    </form>
+    <% end %>
+  </tbody>
+</table>

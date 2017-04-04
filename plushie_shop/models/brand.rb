@@ -2,15 +2,17 @@ require_relative('../db/sql_runner')
 
 class Brand
 
-  attr_reader :id, :brand_name
+  attr_reader :id, :brand_name, :picture, :description
 
   def initialize(options)
     @id = options['id'].to_i
     @brand_name = options['brand_name']
+    @picture = options['picture']
+    @description = options['description']
   end
 
   def save()
-    sql = "INSERT INTO brands (brand_name) VALUES ('#{@brand_name}') RETURNING *"
+    sql = "INSERT INTO brands (brand_name, picture, description) VALUES ('#{@brand_name}', '#{@picture}', '#{@description}') RETURNING *"
     brand_data = SqlRunner.run(sql)
     @id = brand_data.first()['id'].to_i
   end
@@ -23,8 +25,8 @@ class Brand
 
   def update()
     sql = "UPDATE plushies SET (
-        brand_name) = ( 
-        '#{@brand_name}')
+        brand_name, picture, description) = ( 
+        '#{@brand_name}', '#{@picture}', '#{@description}')
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end

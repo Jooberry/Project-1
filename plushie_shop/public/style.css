@@ -2,37 +2,59 @@ body {
   background-color: dodgerblue;
 }
 
-table {
+.plushie_table {
+  background-color: wheat;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
-td, th {
-  border: 1px solid #dddddd;
+.plushie_table td, th {
+  border: 1px solid black;
   text-align: center;
   padding: 8px;
 }
 
-tr:nth-child(even) {
+.plushie_table tr:nth-child(even) {
   background-color: salmon;
 }
 
-.HIGH {
+td.HIGH {
   background-color: green;
   color: white;
 }
 
-.MEDIUM {
+td.MEDIUM {
   background-color: orange;
   color: white;
 }
 
-.LOW {
+td.LOW {
   background-color: red;
   color: white;
 }
 
 .plushie-image {
-  max-width: 110px;
-  max-height: 110px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.brand-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.brand_table {
+  background-color: salmon;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.brand_table td, th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
+
+.brand_table tr:nth-child(even) {
+  background-color: wheat;
 }

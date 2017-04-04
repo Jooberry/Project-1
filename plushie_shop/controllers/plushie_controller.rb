@@ -40,7 +40,7 @@ end
 post '/plushies/:id' do 
   @plushie = Plushie.new(params)
   @plushie.update
-  erb(:"plushies/show")
+  redirect to '/plushies'
 end
 
 binding.pry

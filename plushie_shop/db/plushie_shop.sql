@@ -3,7 +3,9 @@ DROP TABLE IF EXISTS brands;
 
 CREATE TABLE brands (
   id SERIAL4 PRIMARY KEY,
-  brand_name VARCHAR(255)
+  brand_name VARCHAR(255),
+  picture VARCHAR(255),
+  description TEXT
 );
 
 CREATE TABLE plushies (
