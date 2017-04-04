@@ -8,6 +8,8 @@
     <th>Buy Price of all Stock</th>
     <th>Sell Price</th>
     <th>Sell Price of all Stock</th>
+    <th>Profit</th>
+    <th>Profit of all Stock</th>
     <th></th>
   </thead>
   <tbody>
@@ -20,7 +22,9 @@
       <td><%= "%.2f" % plushie.buy_price %></td>
       <td><%= "%.2f" % plushie.buy_price_all %></td>
       <td><%= plushie.sell_price %></td>
-      <td><%= "%.2f" %plushie.sell_price_all %></td>
+      <td><%= "%.2f" % plushie.sell_price_all %></td>
+      <td><%= "%.2f" % plushie.profit %></td>
+      <td><%= "%.2f" % plushie.profit_all %></td>
       <td><a href="/plushies/<%= plushie.id %>">Show Plushie</a></td>
     </tr>
     <% end %>
