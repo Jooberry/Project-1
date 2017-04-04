@@ -57,15 +57,6 @@ class Plushie
     @buy_price * @quantity
   end
 
-  def buy_price_total()
-    result = Plushie.all()
-    total = 0
-    result.each do |plushie|
-      total += plushie.buy_price_all
-    end
-    return total
-  end
-
   def sell_price()
     sell_price = @buy_price * 2.7
     return sell_price.round(0) + 0.99
@@ -75,30 +66,12 @@ class Plushie
     @quantity * sell_price
   end
 
-  def sell_price_total()
-    result = Plushie.all()
-    total = 0
-    result.each do |plushie|
-      total += plushie.sell_price_all
-    end
-    return total
-  end
-
   def profit()
     sell_price - @buy_price
   end
 
   def profit_all()
     @quantity * profit
-  end
-
-  def profit_total()
-    result = Plushie.all()
-    total = 0
-    result.each do |plushie|
-      total += plushie.profit_all
-    end
-    return total
   end
 
   def self.quantity_sum()
@@ -112,6 +85,33 @@ class Plushie
     sql = "SELECT SUM(quantity) as total FROM plushies"
     result = SqlRunner.run(sql)
     return result.first["total"].to_i
+  end
+
+  def self.buy_price_total()
+    result = Plushie.all()
+    total = 0
+    result.each do |plushie|
+      total += plushie.buy_price_all
+    end
+    return total
+  end
+
+  def self.sell_price_total()
+    result = Plushie.all()
+    total = 0
+    result.each do |plushie|
+      total += plushie.sell_price_all
+    end
+    return total
+  end
+
+  def self.profit_total()
+    result = Plushie.all()
+    total = 0
+    result.each do |plushie|
+      total += plushie.profit_all
+    end
+    return total
   end
 
   def self.all()
