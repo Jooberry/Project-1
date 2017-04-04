@@ -28,5 +28,13 @@
       <td><a href="/plushies/<%= plushie.id %>">Show Plushie</a></td>
     </tr>
     <% end %>
+    <tr>
+      <td><b>Totals:</b></td>
+      <td></td>
+      <td><%= Plushie.quantity_sum %></td>
+      <td></td>
+      <td></td>
+      
+    </tr>
   </tbody>
 </table>
