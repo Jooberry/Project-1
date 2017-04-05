@@ -20,6 +20,7 @@ get '/plushies/new' do
 end
 
 post '/plushies' do
+  binding.pry
   @plushie = Plushie.new(params)
   @plushie.save()
   redirect to '/plushies'

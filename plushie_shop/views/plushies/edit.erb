@@ -15,6 +15,10 @@
   <input id="quantity" type="number" name="quantity" value="<%= @plushie.quantity %>"/>
   <br/>
   <br/>
+  <label for="buy_price">Buy Price:</label>
+  <input id="buy_price" type="number" name="buy_price" min='0.01' step='0.01' value="<%= @plushie.buy_price %>"/>
+  <br/>
+  <br/>
   <label for="picture">Picture:</label>
   <input id="picture" type="text" name="picture" value="<%= @plushie.picture %>"/>
   <br/>

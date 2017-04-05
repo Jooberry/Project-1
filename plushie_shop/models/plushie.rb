@@ -7,7 +7,7 @@ class Plushie
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @brand_id = options['brand_id']
+    @brand_id = options['brand_id'].to_i
     @quantity = options['quantity'].to_i
     @buy_price = options['buy_price'].to_f.round(2)
     @picture = options['picture']
@@ -116,6 +116,13 @@ class Plushie
       total += plushie.profit_all
     end
     return total
+  end
+
+  def self.order_by_rating
+    sql = "SELECT * FROM plushies ORDER BY rating DESC;"
+    rating = SqlRunner.run(sql)
+    result = rating.map { |plushie| Plushie.new(plushie)}
+    return result
   end
 
   def self.all()

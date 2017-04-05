@@ -6,12 +6,16 @@
   <label for="brand-select">Brand:</label>
     <% @brands.each do |brand| %>
     <br/>
-    <input type="radio" name="brand_id"><%= brand.brand_name %>
+    <input type="radio" name="brand_id" value=<%= brand.id %>><%= brand.brand_name %>
     <% end %>
   <br/>
   <br/>
   <label for="quantity">Quantity:</label>
   <input id="quantity" type="number" name="quantity"/>
+  <br/>
+  <br/>
+  <label for="buy_price">Buy Price:</label>
+  <input id="buy_price" type="number" name="buy_price" min='0.01' step='0.01' />
   <br/>
   <br/>
   <label for="picture">Picture:</label>
