@@ -1,5 +1,20 @@
-<% @plushies = Plushie.order_by_rating %>
-<% @plushies.each do |plushie| %>
-<%= plushie.name %>
-<br/>
-<% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joojoo's Plushie Shop</title>
+  <link rel="icon" href="https://cdn.shopify.com/s/files/1/0584/3841/products/plush-stache-labbit-small-plush-white-1.jpg?v=1448505854">
+  <link href="https://fonts.googleapis.com/css?family=Monoton|Bubblegum+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/ratings.css">
+</head>
+<body>
+  <button class="back-button"><a href="/plushies">Back to All Plushies</a></button>
+  <div class="ratings">
+  <strong><% @plushies = Plushie.order_by_rating %>
+  <% @plushies.each do |plushie| %>
+  <%= plushie.name %>
+  <br/>
+  <% end %>
+  </strong> 
+  </div>
+</body>
+</html>

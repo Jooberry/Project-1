@@ -1,5 +1,5 @@
 <table class="plushie_table">
-  <thead class ="plushie_table_head">
+  <thead class="plushie_table_head">
     <th>Name</th>
     <th>Brand</th>
     <th>Quantity</th>
@@ -12,12 +12,11 @@
     <th>All Stock - P</th>
     <th><a href="/plushies/rating">Cuteness</a></th>
     <th>Picture</th>
-    <th></th>
   </thead>
   <tbody>
     <% @plushies.each do |plushie| %>
     <tr>
-      <td><%= plushie.name %></td>
+      <td class="name-button"><button><a href="/plushies/<%= plushie.id %>"><%= plushie.name %></a></button></td>
       <td><%= plushie.brand %></td>
       <td><%= plushie.quantity %></td>
       <td class="<%= plushie.show_stock_level%>"><%= plushie.show_stock_level %></td>
@@ -31,7 +30,6 @@
      <div class="star-ratings-sprite"><span class="star-ratings-sprite-rating"     style="width: <%= plushie.rating_as_percentage %>"></span></div>
       </td>
       <td> <img class="plushie-image" src=<%= plushie.picture %>></td>
-      <td><a href="/plushies/<%= plushie.id %>">Info</a></td>
     </tr>
     <% end %>
     <tr class="totals">

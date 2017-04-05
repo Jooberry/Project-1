@@ -11,7 +11,7 @@ end
 
 get '/plushies/rating' do
   @plushies = Plushie.all()
-  erb(:"plushies/rating")
+  erb(:"plushies/rating", :layout => false)
 end
 
 get '/plushies/new' do
@@ -20,7 +20,6 @@ get '/plushies/new' do
 end
 
 post '/plushies' do
-  binding.pry
   @plushie = Plushie.new(params)
   @plushie.save()
   redirect to '/plushies'

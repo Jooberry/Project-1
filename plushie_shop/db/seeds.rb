@@ -17,8 +17,15 @@ brand2 = Brand.new({
   "description" => "Sanrio Co., Ltd. (株式会社サンリオ Kabushikigaisha Sanrio?) is a Japanese company that designs, licenses and produces products focusing on the kawaii (cute) segment of Japanese popular culture. Their products include stationery, school supplies, gifts and accessories that are sold worldwide and at specialty brand retail stores in Japan. Sanrio's best-known character is Hello Kitty (a.k.a. Kitty White), a little anthropomorphic cat girl. With her red bow and no visible mouth except in most of the animations, she is one of the most successful marketing brands in the world."
   })
 
+brand2 = Brand.new({
+  "brand_name" => "Cartoonito",
+  "picture" => "http://data.whicdn.com/images/151098143/superthumb.jpg",
+  "description" => "South Korea!"
+  })
+
 brand1.save()
 brand2.save()
+brand3.save()
 
 plushie1 = Plushie.new({
   "name" => "Rilakkuma",
@@ -56,10 +63,20 @@ plushie4 = Plushie.new({
   "rating" => 88
   })
 
+plushie5 = Plushie.new({
+  "name" => "Molang",
+  "brand_id" => brand3.id,
+  "quantity" => 1,
+  "buy_price" => 3.76,
+  "picture" => "http://68.media.tumblr.com/38ad8a9894eb79b664396db395bcea20/tumblr_inline_okdw0zUC5I1s4zf7s_540.gif",
+  "rating" => 77
+  })
+
 plushie1.save()
 plushie2.save()
 plushie3.save()
 plushie4.save()
+plushie5.save()
 
 binding.pry
 nil

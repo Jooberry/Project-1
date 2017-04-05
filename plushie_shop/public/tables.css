@@ -1,8 +1,14 @@
+.totals {
+  font-size: 22pt;
+  color: black;
+}
 
 .plushie_table {
-  color: black;
-  background-color: wheat;
-  font-family: arial, sans-serif;
+  color: #0935FF;
+  background-image: url("http://data.whicdn.com/images/148655562/superthumb.jpg");
+  background-size: 230px;
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 16pt;
   border-collapse: collapse;
   width: 100%;
 }
@@ -12,8 +18,9 @@
   padding: 8px;
 }
 
-.plushie_table tr:nth-child(even) {
-  background-color: #A7364E;
+.plushie_table_head {
+  font-size: 19pt;
+  color: black;
 }
 
 td.HIGH {
@@ -44,10 +51,18 @@ td.LOW {
 .brand_table {
   color: black;
   background-color: salmon;
-  font-family: arial, sans-serif;
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 12pt;
   border-collapse: collapse;
   width: 100%;
 }
+
+.brand_table_head {
+  font-size: 18pt;
+  color: black;
+  font-family: 'Pangolin', cursive;
+}
+
 .brand_table td, th {
   border: 1px solid black;
   text-align: center;

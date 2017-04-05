@@ -1,4 +1,6 @@
+<div class="form-style">
 <form method="post" action="/plushies/<%=@plushie.id%>">
+<fieldset>
   <label for="name">Name:</label>
   <input id="name" type="text" name="name" value="<%= @plushie.name %>"/>
   <br/>
@@ -27,5 +29,7 @@
   <input id="rating" type="number" name="rating" value="<%= @plushie.rating %>"/>
   <br/>
   <br/>
+  </fieldset>
   <input type="submit" value="Update Plushie"/>
 </form>
+</div>

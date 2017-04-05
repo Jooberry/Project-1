@@ -1,4 +1,6 @@
+<div class="form-style">
 <form method="post" action="/brands/<%=@brand.id%>">
+<fieldset>
   <label for="name">Name:</label>
   <input id="name" type="text" name="brand_name" value="<%= @brand.brand_name %>"/>
   <br/>
@@ -8,5 +10,7 @@
   <label for="description">Description:</label>
   <textarea id="description" name="description" rows="10" cols="30"> <%= @brand.description %></textarea>
   <br/>
+  </fieldset>
   <input type="submit" value="Update Brand"/>
 </form>
+</div>

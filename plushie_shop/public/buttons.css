@@ -1,0 +1,9 @@
+td button a {
+  text-decoration: none;
+}
+
+.name-button button a {
+  font-size: 14pt;
+  font-family: 'Pangolin', cursive;
+  color: black;
+}
