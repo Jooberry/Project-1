@@ -10,7 +10,7 @@
     <tr>
     <td><%= brand.brand_name %></td>
     <td> <img class="brand-image" src=<%= brand.picture %>></td>
-    <td><%= brand.description.gsub("''", "'") %></td>
+    <td><%= brand.description %></td>
     <td>
       <form method="get" action="/brands/<%= brand.id %>/edit">
       <input type="submit" value="Edit Brand">
