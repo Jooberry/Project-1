@@ -25,7 +25,8 @@ plushie1 = Plushie.new({
   "brand_id" => brand1.id,
   "quantity" => 5,
   "buy_price" => 3.50,
-  "picture" => "https://media.giphy.com/media/qXU69Jg83HIFa/giphy.gif"
+  "picture" => "https://media.giphy.com/media/qXU69Jg83HIFa/giphy.gif",
+  "rating" => 92
   })
 
 plushie2 = Plushie.new({
@@ -33,7 +34,8 @@ plushie2 = Plushie.new({
   "brand_id" => brand2.id,
   "quantity" => 8,
   "buy_price" => 2.90,
-  "picture" => "http://www.oocities.org/soho/atrium/6557/batzmaru.gif"
+  "picture" => "http://www.oocities.org/soho/atrium/6557/batzmaru.gif",
+  "rating" => 55
   })
 
 plushie3 = Plushie.new({
@@ -41,7 +43,8 @@ plushie3 = Plushie.new({
   "brand_id" => brand2.id,
   "quantity" => 10,
   "buy_price" => 3.25,
-  "picture" => "http://orig09.deviantart.net/5b7d/f/2010/240/2/7/cinnamoroll_by_anniemaho-d2xgfrj.gif"
+  "picture" => "http://orig09.deviantart.net/5b7d/f/2010/240/2/7/cinnamoroll_by_anniemaho-d2xgfrj.gif",
+  "rating" => 72
   })
 
 plushie4 = Plushie.new({
@@ -49,7 +52,8 @@ plushie4 = Plushie.new({
   "brand_id" => brand2.id,
   "quantity" => 2,
   "buy_price" => 4.40,
-  "picture" => "https://media.giphy.com/media/sKjiRdGGlmk5q/giphy.gif"
+  "picture" => "https://media.giphy.com/media/sKjiRdGGlmk5q/giphy.gif",
+  "rating" => 88
   })
 
 plushie1.save()

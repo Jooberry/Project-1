@@ -1,12 +1,3 @@
-body {
-  color: white;
-  background-image: url("http://cdn.wallpapersafari.com/90/53/r0EOQ6.jpg");
-  background-position: center center;
-  background-attachment:fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 .plushie_table {
   color: black;
   background-color: wheat;
@@ -21,7 +12,7 @@ body {
 }
 
 .plushie_table tr:nth-child(even) {
-  background-color: salmon;
+  background-color: #A7364E;
 }
 
 td.HIGH {
@@ -65,7 +56,3 @@ td.LOW {
 .brand_table tr:nth-child(even) {
   background-color: wheat;
 }
-
-textarea {
-  vertical-align: top; 
-}​

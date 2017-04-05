@@ -1,5 +1,5 @@
 <table class="plushie_table">
-  <thead>
+  <thead class ="plushie_table_head">
     <th>Name</th>
     <th>Brand</th>
     <th>Quantity</th>
@@ -10,6 +10,7 @@
     <th>Sell Price of all Stock</th>
     <th>Profit</th>
     <th>Profit of all Stock</th>
+    <th>Popularity</th>
     <th>Picture</th>
     <th></th>
   </thead>
@@ -26,11 +27,12 @@
       <td><%= "%.2f" % plushie.sell_price_all %></td>
       <td><%= "%.2f" % plushie.profit %></td>
       <td><%= "%.2f" % plushie.profit_all %></td>
+      <td></td>
       <td> <img class="plushie-image" src=<%= plushie.picture %>></td>
-      <td><a href="/plushies/<%= plushie.id %>">Show Plushie</a></td>
+      <td><a href="/plushies/<%= plushie.id %>">Info</a></td>
     </tr>
     <% end %>
-    <tr>
+    <tr class="totals">
       <td><b>Totals:</b></td>
       <td></td>
       <td><%= Plushie.quantity_sum %></td>

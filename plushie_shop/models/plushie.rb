@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Plushie
 
-  attr_reader :id, :name, :brand_id, :quantity, :buy_price, :picture
+  attr_reader :id, :name, :brand_id, :quantity, :buy_price, :picture, :rating
 
   def initialize(options)
     @id = options['id'].to_i
@@ -11,10 +11,11 @@ class Plushie
     @quantity = options['quantity'].to_i
     @buy_price = options['buy_price'].to_f.round(2)
     @picture = options['picture']
+    @rating = options['rating'].to_i
   end
 
   def save()
-    sql = "INSERT INTO plushies (name, brand_id, quantity, buy_price, picture) VALUES ('#{@name}', #{@brand_id}, #{@quantity}, #{@buy_price}, '#{@picture}') RETURNING *"
+    sql = "INSERT INTO plushies (name, brand_id, quantity, buy_price, picture, rating) VALUES ('#{@name}', #{@brand_id}, #{@quantity}, #{@buy_price}, '#{@picture}', #{@rating}) RETURNING *"
     plushie_data = SqlRunner.run(sql)
     @id = plushie_data.first()['id'].to_i
   end
@@ -31,12 +32,15 @@ class Plushie
         brand_id,
         quantity,
         buy_price,
-        picture) = ( 
+        picture,
+        rating
+        ) = ( 
         '#{@name}',
         #{@brand_id},
         #{@quantity},
         #{@buy_price},
-        '#{@picture}')
+        '#{@picture}',
+        #{@rating})
         WHERE id = #{@id}"
       SqlRunner.run(sql)
   end
@@ -78,13 +82,6 @@ class Plushie
   end
 
   def self.quantity_sum()
-    # result = Plushie.all()
-    # total = 0
-    # result.each do |plushie|
-    #   total += plushie.quantity
-    # end
-    # return total
-
     sql = "SELECT SUM(quantity) as total FROM plushies"
     result = SqlRunner.run(sql)
     return result.first["total"].to_i

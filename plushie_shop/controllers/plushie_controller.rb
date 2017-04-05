@@ -9,6 +9,11 @@ get  '/plushies' do
   erb(:"plushies/index")
 end
 
+get '/plushies/rating' do
+  @plushies = Plushie.all()
+  erb(:"plushies/rating")
+end
+
 get '/plushies/new' do
   @brands = Brand.all()
   erb(:"plushies/new")

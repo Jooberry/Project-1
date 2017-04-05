@@ -14,5 +14,6 @@ CREATE TABLE plushies (
   brand_id INT4 REFERENCES brands(id) ON DELETE CASCADE,
   quantity INT4,
   buy_price FLOAT,
-  picture VARCHAR(255)
+  picture VARCHAR(255),
+  rating INT2
 );
