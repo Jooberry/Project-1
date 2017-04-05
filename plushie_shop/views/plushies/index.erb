@@ -5,12 +5,12 @@
     <th>Quantity</th>
     <th>Stock Level</th>
     <th>Buy Price</th>
-    <th>Buy Price of all Stock</th>
+    <th>All Stock - BP</th>
     <th>Sell Price</th>
-    <th>Sell Price of all Stock</th>
+    <th>All Stock - SP</th>
     <th>Profit</th>
-    <th>Profit of all Stock</th>
-    <th>Popularity</th>
+    <th>All Stock - P</th>
+    <th><a href="/plushies/rating">Popularity</a></th>
     <th>Picture</th>
     <th></th>
   </thead>
@@ -21,13 +21,13 @@
       <td><%= plushie.brand %></td>
       <td><%= plushie.quantity %></td>
       <td class="<%= plushie.show_stock_level%>"><%= plushie.show_stock_level %></td>
-      <td><%= "%.2f" % plushie.buy_price %></td>
-      <td><%= "%.2f" % plushie.buy_price_all %></td>
-      <td><%= plushie.sell_price %></td>
-      <td><%= "%.2f" % plushie.sell_price_all %></td>
-      <td><%= "%.2f" % plushie.profit %></td>
-      <td><%= "%.2f" % plushie.profit_all %></td>
-      <td></td>
+      <td>£<%= "%.2f" % plushie.buy_price %></td>
+      <td>£<%= "%.2f" % plushie.buy_price_all %></td>
+      <td>£<%= "%.2f" % plushie.sell_price %></td>
+      <td>£<%= "%.2f" % plushie.sell_price_all %></td>
+      <td>£<%= "%.2f" % plushie.profit %></td>
+      <td>£<%= "%.2f" % plushie.profit_all %></td>
+      <td><%= plushie.rating %></td>
       <td> <img class="plushie-image" src=<%= plushie.picture %>></td>
       <td><a href="/plushies/<%= plushie.id %>">Info</a></td>
     </tr>
@@ -38,11 +38,11 @@
       <td><%= Plushie.quantity_sum %></td>
       <td></td>
       <td></td>
-      <td><%= "%.2f" % Plushie.buy_price_total %></td>
+      <td>£<%= "%.2f" % Plushie.buy_price_total %></td>
       <td></td>
-      <td><%= "%.2f" % Plushie.sell_price_total %></td>
+      <td>£<%= "%.2f" % Plushie.sell_price_total %></td>
       <td></td>
-      <td><%= "%.2f" % Plushie.profit_total %></td>
+      <td>£<%= "%.2f" % Plushie.profit_total %></td>
       <td></td>
       <td></td>
     </tr>

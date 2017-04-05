@@ -1,6 +1,12 @@
 <p>Name: <%= @plushie.name %></p>
 <p>Brand: <%= @plushie.brand %></p>
 <p>Quantity: <%= @plushie.quantity %></p>
+<p>Buy Price: £<%= "%.2f" % @plushie.buy_price %></p>
+<p>Buy Price of all Stock: £<%= "%.2f" % @plushie.buy_price_all %></p>
+<p>Sell Price: £<%= "%.2f" % @plushie.sell_price %></p>
+<p>Sell Price of all Stock: £<%= "%.2f" % @plushie.sell_price_all %></p>
+<p>Profit: £<%= "%.2f" % @plushie.profit %></p>
+<p>Profit of all Stock: £<%= "%.2f" % @plushie.profit_all %></p>
 <br/>
 <form method="get" action="/plushies/<%=@plushie.id%>/edit"> 
   <input type="submit" value="Edit Plushie"/>
