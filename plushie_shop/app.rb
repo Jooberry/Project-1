@@ -4,5 +4,5 @@ require_relative('controllers/brand_controller')
 require_relative('controllers/plushie_controller')
 
 get '/' do
-  erb( :index )
+  erb( :index, :layout => false )
 end
