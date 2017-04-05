@@ -1,0 +1,5 @@
+<% @plushies = Plushie.order_by_rating %>
+<% @plushies.each do |plushie| %>
+<%= plushie.name %>
+<br/>
+<% end %>
