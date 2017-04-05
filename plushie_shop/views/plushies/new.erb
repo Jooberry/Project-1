@@ -1,30 +1,27 @@
+<div class="form-style">
 <form method="post" action="/plushies">
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name"/>
+  <fieldset>
+  <legend>New Plushie Info</legend>
+  <input id="name" type="text" name="name" placeholder="Enter plushie name" />
   <br/>
+  <input id="picture" type="text" name="picture" placeholder="Enter picture url/link" />
   <br/>
   <label for="brand-select">Brand:</label>
-    <% @brands.each do |brand| %>
-    <br/>
-    <input type="radio" name="brand_id" value=<%= brand.id %>><%= brand.brand_name %>
-    <% end %>
+  <% @brands.each do |brand| %>
   <br/>
+  <input type="radio" name="brand_id" value=<%= brand.id %>><%= brand.brand_name %>
+  <% end %>
   <br/>
   <label for="quantity">Quantity:</label>
-  <input id="quantity" type="number" name="quantity"/>
-  <br/>
+  <input id="quantity" type="number" name="quantity" placeholder="Enter quantity" />
   <br/>
   <label for="buy_price">Buy Price:</label>
-  <input id="buy_price" type="number" name="buy_price" min='0.01' step='0.01' />
-  <br/>
-  <br/>
-  <label for="picture">Picture:</label>
-  <input id="picture" type="text" name="picture"/>
-  <br/>
+  <input id="buy_price" type="number" name="buy_price" min='0.01' step='0.01' placeholder="Enter buy price" />
   <br/>
   <label for="rating">Rating:</label>
-  <input id="rating" type="number" name="rating"/>
+  <input id="rating" type="number" name="rating" placeholder="Enter rating out of 100" />
   <br/>
-  <br/>
+  </fieldset>
   <input type="submit" value="Create Plushie"/>
 </form>
+</div>

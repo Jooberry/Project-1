@@ -1,12 +1,15 @@
+<div class="form-style">
 <form method="post" action="/brands">
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="brand_name"/>
+<fieldset>
+  <legend>New Brand Info</legend>
+  <input id="name" type="text" name="brand_name" placeholder="Enter brand name" />
   <br/>
-  <label for="picture">Picture:</label>
-  <input id="picture" type="text" name="picture"/>
+  <input id="picture" type="text" name="picture" placeholder="Enter picture url/link" />
   <br/>
   <label for="description">Description:</label>
-  <textarea id="description" name="description" rows="10" cols="30"></textarea>
+  <textarea id="description" name="description" rows="10" cols="30" placeholder="Enter brand description"></textarea>
   <br/>
+</fieldset>
   <input type="submit" value="Create Brand"/>
 </form>
+</div>

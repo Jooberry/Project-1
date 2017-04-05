@@ -1,6 +1,7 @@
 body {
+  text-align: center;
   color: white;
-  background-image: url("http://cdn.wallpapersafari.com/90/53/r0EOQ6.jpg");
+  background: linear-gradient(#003737, #60002A);
   background-position: center center;
   background-attachment:fixed;
   background-repeat: no-repeat;
