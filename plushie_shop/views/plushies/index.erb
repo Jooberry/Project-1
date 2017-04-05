@@ -10,7 +10,7 @@
     <th>All Stock - SP</th>
     <th>Profit</th>
     <th>All Stock - P</th>
-    <th><a href="/plushies/rating">Popularity</a></th>
+    <th><a href="/plushies/rating">Cuteness</a></th>
     <th>Picture</th>
     <th></th>
   </thead>
@@ -27,7 +27,9 @@
       <td>£<%= "%.2f" % plushie.sell_price_all %></td>
       <td>£<%= "%.2f" % plushie.profit %></td>
       <td>£<%= "%.2f" % plushie.profit_all %></td>
-      <td><%= plushie.rating %></td>
+      <td>
+     <div class="star-ratings-sprite"><span class="star-ratings-sprite-rating"     style="width: <%= plushie.rating_as_percentage %>"></span></div>
+      </td>
       <td> <img class="plushie-image" src=<%= plushie.picture %>></td>
       <td><a href="/plushies/<%= plushie.id %>">Info</a></td>
     </tr>

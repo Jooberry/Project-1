@@ -20,6 +20,10 @@ class Plushie
     @id = plushie_data.first()['id'].to_i
   end
 
+  def rating_as_percentage
+    @rating.to_s + "%"
+  end
+
   def brand()
     sql = "SELECT * FROM brands WHERE brands.id = #{@brand_id}"
     brand = SqlRunner.run(sql).first

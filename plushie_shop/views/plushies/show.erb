@@ -7,6 +7,7 @@
 <p>Sell Price of all Stock: £<%= "%.2f" % @plushie.sell_price_all %></p>
 <p>Profit: £<%= "%.2f" % @plushie.profit %></p>
 <p>Profit of all Stock: £<%= "%.2f" % @plushie.profit_all %></p>
+<p>Rating: <%= @plushie.rating_as_percentage %></p>
 <br/>
 <form method="get" action="/plushies/<%=@plushie.id%>/edit"> 
   <input type="submit" value="Edit Plushie"/>
