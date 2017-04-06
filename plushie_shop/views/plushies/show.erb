@@ -1,18 +1,30 @@
-<p>Name: <%= @plushie.name %></p>
-<p>Brand: <%= @plushie.brand %></p>
-<p>Quantity: <%= @plushie.quantity %></p>
-<p>Buy Price: £<%= "%.2f" % @plushie.buy_price %></p>
-<p>Buy Price of all Stock: £<%= "%.2f" % @plushie.buy_price_all %></p>
-<p>Sell Price: £<%= "%.2f" % @plushie.sell_price %></p>
-<p>Sell Price of all Stock: £<%= "%.2f" % @plushie.sell_price_all %></p>
-<p>Profit: £<%= "%.2f" % @plushie.profit %></p>
-<p>Profit of all Stock: £<%= "%.2f" % @plushie.profit_all %></p>
-<p>Rating: <%= @plushie.rating_as_percentage %></p>
-<br/>
-<form method="get" action="/plushies/<%=@plushie.id%>/edit"> 
-  <input type="submit" value="Edit Plushie"/>
-</form>
-<br/>
-<form method="post" action="/plushies/<%= @plushie.id %>/delete">
-  <input type="submit" value="Delete Plushie">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joojoo's Plushie Shop</title>
+    <link rel="icon" href="https://s-media-cache-ak0.pinimg.com/originals/58/0f/a7/580fa716ca8205191ce213d8b74aacc3.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Cut|Supermercado+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/plushie_show.css">
+</head>
+<body>
+  <p>Name: <%= @plushie.name %></p>
+  <p>Brand: <%= @plushie.brand %></p>
+  <p>Quantity: <%= @plushie.quantity %></p>
+  <p>Buy Price: £<%= "%.2f" % @plushie.buy_price %></p>
+  <p>Buy Price of all Stock: £<%= "%.2f" % @plushie.buy_price_all %></p>
+  <p>Sell Price: £<%= "%.2f" % @plushie.sell_price %></p>
+  <p>Sell Price of all Stock: £<%= "%.2f" % @plushie.sell_price_all %></p>
+  <p>Profit: £<%= "%.2f" % @plushie.profit %></p>
+  <p>Profit of all Stock: £<%= "%.2f" % @plushie.profit_all %></p>
+  <p>Rating: <%= @plushie.rating_as_percentage %></p>
+  <br/>
+  <form method="get" action="/plushies/<%=@plushie.id%>/edit"> 
+    <input type="submit" value="Edit Plushie"/>
+  </form>
+  <br/>
+  <form method="post" action="/plushies/<%= @plushie.id %>/delete">
+    <input type="submit" value="Delete Plushie">
+  </form>
+  <br/>
+</body>
+</html>

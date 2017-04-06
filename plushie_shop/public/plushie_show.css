@@ -1,0 +1,13 @@
+body p {
+  font-size: 22pt;
+  font-family: 'Supermercado One', cursive;
+}
+
+form input[type="submit"] {
+  border-radius: 5%;
+  font-size: 15pt;
+  font-family: 'Nova Cut', cursive;
+  background-color: black;
+  color: #CFCF00;
+  padding: 10px;
+}

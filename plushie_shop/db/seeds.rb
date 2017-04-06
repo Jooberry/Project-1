@@ -17,15 +17,22 @@ brand2 = Brand.new({
   "description" => "Sanrio Co., Ltd. (株式会社サンリオ Kabushikigaisha Sanrio?) is a Japanese company that designs, licenses and produces products focusing on the kawaii (cute) segment of Japanese popular culture. Their products include stationery, school supplies, gifts and accessories that are sold worldwide and at specialty brand retail stores in Japan. Sanrio's best-known character is Hello Kitty (a.k.a. Kitty White), a little anthropomorphic cat girl. With her red bow and no visible mouth except in most of the animations, she is one of the most successful marketing brands in the world."
   })
 
-brand2 = Brand.new({
+brand3 = Brand.new({
   "brand_name" => "Cartoonito",
-  "picture" => "http://data.whicdn.com/images/151098143/superthumb.jpg",
+  "picture" => "http://static.fjcdn.com/gifs/Molang_a1540c_5548807.gif",
   "description" => "South Korea!"
+  })
+
+brand4 = Brand.new({
+  "brand_name" => "Pokemon",
+  "picture" => "http://2.bp.blogspot.com/-j_GR1Tq5tP0/VbY3ueWy4qI/AAAAAAAAIvE/wCjca8TaU6g/s1600/Logo%2BPokemon.png",
+  "description" => "Pocket Monsters that are kept inhumanely in tiny pokeballs. Japan!"
   })
 
 brand1.save()
 brand2.save()
 brand3.save()
+brand4.save()
 
 plushie1 = Plushie.new({
   "name" => "Rilakkuma",
@@ -42,7 +49,7 @@ plushie2 = Plushie.new({
   "quantity" => 8,
   "buy_price" => 2.90,
   "picture" => "http://www.oocities.org/soho/atrium/6557/batzmaru.gif",
-  "rating" => 55
+  "rating" => 25
   })
 
 plushie3 = Plushie.new({
@@ -51,7 +58,7 @@ plushie3 = Plushie.new({
   "quantity" => 10,
   "buy_price" => 3.25,
   "picture" => "http://orig09.deviantart.net/5b7d/f/2010/240/2/7/cinnamoroll_by_anniemaho-d2xgfrj.gif",
-  "rating" => 72
+  "rating" => 64
   })
 
 plushie4 = Plushie.new({
@@ -60,7 +67,7 @@ plushie4 = Plushie.new({
   "quantity" => 2,
   "buy_price" => 4.40,
   "picture" => "https://media.giphy.com/media/sKjiRdGGlmk5q/giphy.gif",
-  "rating" => 88
+  "rating" => 100
   })
 
 plushie5 = Plushie.new({
@@ -68,8 +75,17 @@ plushie5 = Plushie.new({
   "brand_id" => brand3.id,
   "quantity" => 1,
   "buy_price" => 3.76,
-  "picture" => "http://68.media.tumblr.com/38ad8a9894eb79b664396db395bcea20/tumblr_inline_okdw0zUC5I1s4zf7s_540.gif",
+  "picture" => "http://static.fjcdn.com/gifs/Molang_a1540c_5548807.gif",
   "rating" => 77
+  })
+
+plushie6 = Plushie.new({
+  "name" => "Pikachu",
+  "brand_id" => brand4.id,
+  "quantity" => 6,
+  "buy_price" => 2.89,
+  "picture" => "https://cdn1.vox-cdn.com/uploads/chorus_asset/file/655222/tumblr_lmpg9jl57d1qfeod9.0.gif",
+  "rating" => 85
   })
 
 plushie1.save()
@@ -77,6 +93,7 @@ plushie2.save()
 plushie3.save()
 plushie4.save()
 plushie5.save()
+plushie6.save()
 
 binding.pry
 nil
